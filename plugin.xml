@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-customurlscheme"
-        version="4.2.0">
+        version="4.2.1">
 
   <name>Custom URL scheme</name>
 
@@ -43,6 +43,14 @@
         </dict>
       </array>
     </config-file>
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="CDVHandleOpenURLColdStart">
+        <param name="ios-package" value="CDVHandleOpenURLColdStart" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CDVHandleOpenURL+ColdStart.h" />
+    <source-file src="src/ios/CDVHandleOpenURL+ColdStart.m" />
   </platform>
 
   <!-- android -->
