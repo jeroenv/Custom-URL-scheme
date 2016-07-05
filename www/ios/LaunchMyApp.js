@@ -1,9 +1,11 @@
-"use strict";
+var argscheck = require('cordova/argscheck'),
+    utils = require('cordova/utils'),
+    exec = require('cordova/exec');
 
-/*
- Q: Why an empty file?
- A: iOS doesn't need plumbing to get the plugin to work, so..
-    - Including no file would mean the import in index.html would differ per platform.
-    - Also, using one version and adding a userAgent check for Android feels wrong.
-    - And if you're not using PhoneGap Build, you could paste your handleOpenUrl JS function here.
-*/
+// prime it
+exec(null, null, "OpenURL", "_ready", []);
+
+var OpenURL = function() {
+};
+
+module.exports = OpenURL;
