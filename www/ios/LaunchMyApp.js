@@ -3,7 +3,7 @@ var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec');
 
 // prime it
-exec(null, null, "OpenURL", "_ready", []);
+cordova.exec(null, null, "OpenURL");
 
 var OpenURL = function() {
 };

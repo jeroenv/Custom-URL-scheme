@@ -2,9 +2,9 @@
  Customized version of CDVHandleOpenURL
  */
 
-#import "OpenURL.h"
+#import "LaunchMyApp.h"
 
-@implementation OpenURL
+@implementation LaunchMyApp
 
 - (void)pluginInitialize
 {
