@@ -38,9 +38,10 @@
 
 - (void)processOpenUrl:(NSURL*)url pageLoaded:(BOOL)pageLoaded
 {
-   
-    NSString* jsString = [NSString stringWithFormat:@"document.addEventListener('deviceready',function(){ if(typeof handleOpenURL === 'function'){ handleOpenURL(\"%@\"); }else{ window.openURL=\"%@\";}});", url, url];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsString];    
+    if(url && pageLoaded){
+        NSString* jsString = [NSString stringWithFormat:@"window.openURL=\"%@\";", url];
+        [self.webView stringByEvaluatingJavaScriptFromString:jsString];    
+    }
 }
 
 @end
