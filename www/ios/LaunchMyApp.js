@@ -3,9 +3,9 @@ var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec');
 
 // prime it
-cordova.exec(null, null, "OpenURL");
+cordova.exec(null, null, "LaunchMyApp");
 
-var OpenURL = function() {
+var LaunchMyApp = function() {
 };
 
-module.exports = OpenURL;
+module.exports = LaunchMyApp;
