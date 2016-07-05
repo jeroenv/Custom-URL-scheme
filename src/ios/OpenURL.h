@@ -1,4 +1,4 @@
-#import "CDVPlugin.h"
+#import <Cordova/CDVPlugin.h>
 
 @interface OpenURL : CDVPlugin
 
