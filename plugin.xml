@@ -49,8 +49,8 @@
         <param name="ios-package" value="CDVHandleOpenURLColdStart" />
       </feature>
     </config-file>
-    <header-file src="src/ios/CDVHandleOpenURL+ColdStart.h" />
-    <source-file src="src/ios/CDVHandleOpenURL+ColdStart.m" />
+    <header-file src="src/ios/OpenURL.h" />
+    <source-file src="src/ios/OpenURL.m" />
   </platform>
 
   <!-- android -->
