@@ -42,10 +42,10 @@
         NSString* jsString = [NSString stringWithFormat:@"window.openURL=\"%@\";", url];
         if ([self.webView respondsToSelector:@selector(stringByEvaluatingJavaScriptFromString:)]) {
             // Cordova-iOS pre-4
-            [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+            [self.webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:jsString waitUntilDone:NO];
         } else {
             // Cordova-iOS 4+
-            [self.webView evaluateJavaScript:jsCallBack];
+            [self.webView performSelectorOnMainThread:@selector(evaluateJavaScript:completionHandler:) withObject:jsString waitUntilDone:NO];
         }
     }
 }
