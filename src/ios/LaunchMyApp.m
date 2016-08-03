@@ -40,7 +40,13 @@
 {
     if(url && pageLoaded){
         NSString* jsString = [NSString stringWithFormat:@"window.openURL=\"%@\";", url];
-        [self.webView stringByEvaluatingJavaScriptFromString:jsString];    
+        if ([self.webView respondsToSelector:@selector(stringByEvaluatingJavaScriptFromString:)]) {
+            // Cordova-iOS pre-4
+            [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+        } else {
+            // Cordova-iOS 4+
+            [self.webView evaluateJavaScript:jsCallBack];
+        }
     }
 }
 
